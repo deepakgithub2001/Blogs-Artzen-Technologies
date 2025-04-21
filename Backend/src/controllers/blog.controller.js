@@ -7,11 +7,11 @@ import mongoose from "mongoose";
 
 const createBlogs = asyncHandler(async (req, res) => {
   const { title, content, authorName } = req.body;
-console.log(title +" "+ content + " "+ authorName)
+  console.log(title + " " + content + " " + authorName)
   if (!title || !content || !authorName) {
     throw new ApiError(400, "All fields are required");
   }
-console.log(req.file);
+  console.log(req.file);
 
   const avatarLocalPath = req.files?.avatar?.[0]?.path;
 
@@ -34,17 +34,16 @@ console.log(req.file);
 });
 
 const getAllBlogs = asyncHandler(async (req, res) => {
-    const blogsList = await Blogs.find({});
-  
-    if (!blogsList) {
-      throw new ApiError(401, "Blogs List Not found");
-    }
-  
-    res
-      .status(200)
-      .json(new ApiResponse(200, blogsList, "Get Blogs List Successfully"));
-  });
-  
+  const blogsList = await Blogs.find({});
+
+  if (!blogsList) {
+    throw new ApiError(401, "Blogs List Not found");
+  }
+
+  res
+    .status(200)
+    .json(new ApiResponse(200, blogsList, "Get Blogs List Successfully"));
+});
 
 const deleteBlog = asyncHandler(async (req, res) => {
   const { id } = req.params;
@@ -95,18 +94,18 @@ const updateBlogs = asyncHandler(async (req, res) => {
 const getSingleBlog = asyncHandler(async (req, res) => {
   const { id } = req.params;
 
-  
+
   if (!mongoose.Types.ObjectId.isValid(id)) {
     throw new ApiError(400, "Invalid blog ID");
   }
 
-  
+
   const blog = await Blogs.findById(id);
   if (!blog) {
     throw new ApiError(404, "Blog not found");
   }
 
- 
+
   res.status(200).json(
     new ApiResponse(200, blog, "Fetched single blog successfully")
   );

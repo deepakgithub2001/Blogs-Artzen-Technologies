@@ -8,11 +8,9 @@ Welcome to the **Blogs Creating Website** repository! This project allows users 
 
 - **User Authentication**: Secure login and registration system.
 - **Create and Edit Blogs**: A rich-text editor for creating engaging blog content.
-- **Categories and Tags**: Organize your blogs with categories and tags.
 - **Responsive Design**: Fully responsive and mobile-friendly UI.
-- **Commenting System**: Engage with readers through a built-in commenting system.
-- **Search and Filter**: Find blogs easily using search and filter options.
 - **SEO Friendly**: Optimize blogs for search engines.
+- **Experience the Blogs**: See all the blogs at one place.
 
 ## Tech Stack
 
